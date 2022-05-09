@@ -7,8 +7,12 @@ public class Moto extends Automovel {
 	public Moto() {
 		super();
 	}
+	public Moto(int numRodas, int velMax) {
+		super(numRodas, velMax);
+	}
     public String toString() {
-    	return "\nnumero de rodas: "+getNumRodas()+
+    	return "\nmoto"+
+				"\nnumero de rodas: "+getNumRodas()+
     			"\nvelocidade maxima: "+getVelMax()+
     			"\nligado: "+getLigado();
     }
