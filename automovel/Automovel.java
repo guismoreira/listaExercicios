@@ -34,10 +34,9 @@ public class Automovel {
     public Automovel(){
 
     }
-    public Automovel(int numRodas, int velMax, boolean ligado){
+    public Automovel(int numRodas, int velMax){
         this.numRodas = numRodas;
         this.velMax = velMax;
-        this.ligado = ligado;
     }
     public String toString(){
         return  "\nnumero de rodas: "+this.numRodas+

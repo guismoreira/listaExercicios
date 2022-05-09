@@ -8,13 +8,17 @@ public class CarroAutomatico extends Carro{
     	super();
     }
     
-	public CarroAutomatico(boolean freio) {
+	public CarroAutomatico(int numRodas, int velMax) {
     	super();
-    	this.freio = freio;
     }
     public void ligar(boolean freio){
     	if(freio == true) {
             this.freio = true;
     	}
+    }
+    public String toString() {
+    	return "\nnumero de rodas: "+getNumRodas()+
+    			"\nvelocidade maxima: "+getVelMax()+
+    			"\nligado: "+getLigado();
     }
 }

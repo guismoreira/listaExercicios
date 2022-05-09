@@ -18,4 +18,9 @@ public class MotoPartidaPedal extends Moto{
     		this.acelerador = acelerador;
     	}
     }
+    public String toString() {
+    	return "\nnumero de rodas: "+getNumRodas()+
+    			"\nvelocidade maxima: "+getVelMax()+
+    			"\nligado: "+getLigado();
+    }
 }
