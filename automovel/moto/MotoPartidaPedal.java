@@ -7,19 +7,24 @@ public class MotoPartidaPedal extends Moto{
     public MotoPartidaPedal() {
     	super();
     }
-    
-    public MotoPartidaPedal(boolean acelerador) {
-    	super();
-    	this.acelerador = acelerador;
+
+    public MotoPartidaPedal(int numRodas, int velMax) {
+        super(numRodas, velMax);
+    }
+    public void acelerar(boolean acelerador){
+        if (acelerador) {
+            this.acelerador = true;
+        }
     }
     
-    public void ligar(boolean acelerador){
-    	if(acelerador == true) {
-    		this.acelerador = acelerador;
+    public void ligar(){
+    	if(this.acelerador) {
+    		this.ligado = acelerador;
     	}
     }
     public String toString() {
-    	return "\nnumero de rodas: "+getNumRodas()+
+    	return "\nmoto partida pedaç"+
+                "\nnumero de rodas: "+getNumRodas()+
     			"\nvelocidade maxima: "+getVelMax()+
     			"\nligado: "+getLigado();
     }

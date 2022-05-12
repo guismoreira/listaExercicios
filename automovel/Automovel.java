@@ -3,7 +3,7 @@ package listaExercicios.automovel;
 public class Automovel {
     private int numRodas;
     private int velMax;
-    private boolean ligado;
+    protected boolean ligado;
 
     public int getNumRodas(){
         return this.numRodas;
@@ -18,18 +18,18 @@ public class Automovel {
         this.velMax = velMax;
     }
     public boolean getLigado(){
-        return this.ligado = ligado;
+        return this.ligado;
     }
     public void setLigado(boolean ligado){
         this.ligado = ligado;
     }
 
     public void ligar(){
-            ligado = true;
+            this.ligado = true;
     }
 
     public void desligar(){
-            ligado = false;
+            this.ligado = false;
     }
     public Automovel(){
 
