@@ -1,4 +1,4 @@
-package listaExercicios.hashmap;
+package listaExercicios.algoritmos.hashmap;
 
 import java.util.ArrayList;
 import java.util.Arrays;

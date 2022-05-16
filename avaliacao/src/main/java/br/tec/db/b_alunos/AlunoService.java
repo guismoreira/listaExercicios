@@ -1,5 +1,7 @@
 package br.tec.db.b_alunos;
 
+import br.tec.db.c_alunos.EstabelecimentoComercial;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,18 +23,26 @@ public class AlunoService {
 		
 		AlunoService alunoService = new AlunoService();
 		alunoService.alunosPorNota(alunos);
+
 	}
 	
 	// Qual tipo de retorno? Como organizar alunos por nota?
-	public Object alunosPorNota(List<Aluno> alunos) {
+	public Map alunosPorNota(List<Aluno> alunos) {
 		// Nota 10: Alice, Arthur
 		// Nota 9: Cassiane, Karina
 		// Nota 8: Samuel
 		// Nota 7:
 		// Nota 6: Jaqueline, Juliana, Jonathan, Jeferson
 		Map<Integer, String> alunosMap = new HashMap<Integer, String>();
-		
-		System.out.println(alunosMap.get(7));
+		for (Aluno aluno : alunos) {
+			if(alunosMap.get(aluno.getNota()) != null) {
+				alunosMap.put(aluno.getNota(), alunosMap.get(aluno.getNota()) + ", " + aluno.getNome()+";");
+			}else{
+				alunosMap.put(aluno.nota, aluno.nome);
+			}
+		}
+		System.out.println(alunosMap);
+
 		return null;
 	}
 }

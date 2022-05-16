@@ -1,4 +1,4 @@
-package listaExercicios.hashmap;
+package listaExercicios.algoritmos.hashmap;
 
 import java.util.HashMap;
 import java.util.List;
@@ -14,11 +14,11 @@ public class AlunoService {
 		// Nota 7:
 		// Nota 6: Jaqueline, Juliana, Jonathan, Jeferson
 	
-		Map<String, Integer> notaAlunos = new HashMap<>();
+		Map<Integer, String> notaAlunos = new HashMap<>();
+
 	
-	
-		for(String chave : notaAlunos.keySet()) {
-			Integer val = notaAlunos.get(chave);
+		for(Integer chave : notaAlunos.keySet()) {
+			String val = notaAlunos.get(chave);
 			System.out.println(chave + " = " + val);
 		}
 		return notaAlunos;

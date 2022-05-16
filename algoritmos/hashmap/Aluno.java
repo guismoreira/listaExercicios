@@ -1,4 +1,4 @@
-package listaExercicios.hashmap;
+package listaExercicios.algoritmos.hashmap;
 
 public class Aluno {
 	String nome;
