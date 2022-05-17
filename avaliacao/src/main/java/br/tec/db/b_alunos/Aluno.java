@@ -2,8 +2,8 @@ package br.tec.db.b_alunos;
 
 public class Aluno {
 
-	String nome;
-	Integer nota;
+	private String nome;
+	private Integer nota;
 	
 	public Aluno(String nome, Integer nota) {
 		this.nome = nome;
