@@ -1,5 +1,6 @@
 package br.tec.db;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import br.tec.db.d_produtos.Produto;
@@ -10,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.when;
 
 class ProdutoService {
@@ -38,18 +40,25 @@ public class ProdutoServiceTest {
 	@Mock
 	ProdutoRepository produtoRepository;
 	
+	Produto prod;
+	
+	@BeforeEach
+	void implementaProduto() {
+		Produto prod = new Produto("tv", 1L);
+	}
+	
 	@Test
 	public void buscaProduto() {
-		Produto prod = new Produto("tv", 1L);
 		when(produtoRepository.findById(1L)).thenReturn(prod);
 		assertEquals(prod, produtoService.obterProdutoPorId(1L));
+		
+		
 	}
 	
 	
 	@Test
 	public void salvaProduto() {
-		Produto prod = new Produto("tv");
-		when(produtoService.save(prod)).thenReturn(prod);
-		assertEquals(prod, produtoRepository.save(prod));
+		when(produtoRepository.save(prod)).thenReturn(prod);
+		assertEquals(prod, produtoService.save(prod));
 	}
 }
