@@ -22,7 +22,7 @@ public class AlunoService {
 
 		Map<Integer, String> alunosPrint = new HashMap<Integer, String>();
 		AlunoService alunoService = new AlunoService();
-		alunosPrint = alunoService.alunosPorNota(alunos);
+		alunosPrint = alunoService.alunosPorNotaComString(alunos);
 		
 		alunosPrint.forEach((k, v) -> {
 			System.out.println("Nota " + k +": "+v);
@@ -31,7 +31,7 @@ public class AlunoService {
 	}
 	
 	// Qual tipo de retorno? Como organizar alunos por nota?
-	public Map alunosPorNota(List<Aluno> alunos) {
+	public Map alunosPorNotaComString(List<Aluno> alunos) {
 		// Nota 10: Alice, Arthur
 		// Nota 9: Cassiane, Karina
 		// Nota 8: Samuel
@@ -46,5 +46,22 @@ public class AlunoService {
 			}
 		}
 		return alunosMap;
+	}
+
+	public Map alunosPorNotaComLista(List<Aluno> alunos) {
+		Map<Integer, List<Aluno>> mapLista = new HashMap<>();
+
+		List<Aluno> listaAluno = new ArrayList<>();
+
+		for(Aluno aluno : alunos) {
+			if(mapLista.containsKey(aluno.getNota())) {
+				listaAluno = (mapLista.get(aluno.getNota()));
+			} else {
+				listaAluno = new ArrayList<>();
+			}
+			listaAluno.add(aluno);
+			mapLista.put(aluno.getNota(), listaAluno);
+		}
+		return  mapLista;
 	}
 }

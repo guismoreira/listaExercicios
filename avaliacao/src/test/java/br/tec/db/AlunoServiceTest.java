@@ -39,20 +39,16 @@ public class AlunoServiceTest {
 
     }
 
-
     @Test
     public void deveriaRetornarMapDeAlunos(){
         Map<Integer, String> mapAlunos = new HashMap<>();
-        mapAlunos.put(10, "george bush");
+        mapAlunos.put(7, "jonas, alberto, will");
+        mapAlunos.put(10, "guilherme, andre");
+        mapAlunos.put(8, "richard");
 
-        Map<Integer, String> mapAlunosEsperados = alunoService.alunosPorNota(alunos);
+        Map<Integer, String> mapAlunosEsperados = alunoService.alunosPorNotaComString(alunos);
 
         assertEquals(mapAlunos, mapAlunosEsperados);
-
-
-
-
-        
 
     }
 }
