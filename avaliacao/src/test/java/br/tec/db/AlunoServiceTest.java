@@ -4,22 +4,14 @@ import br.tec.db.b_alunos.Aluno;
 import br.tec.db.b_alunos.AlunoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class AlunoServiceTest {
-
 
     AlunoService alunoService;
     List<Aluno> alunos;
@@ -35,8 +27,7 @@ public class AlunoServiceTest {
                 new Aluno("andre", 10),
                 new Aluno("will", 7),
                 new Aluno("richard", 8));
-
-
+        
     }
 
     @Test
@@ -49,6 +40,21 @@ public class AlunoServiceTest {
         Map<Integer, String> mapAlunosEsperados = alunoService.alunosPorNotaComString(alunos);
 
         assertEquals(mapAlunos, mapAlunosEsperados);
+
+    }
+
+    @Test
+    public void deveriaRetornarMapDeAlunosComListaDeAlunos() {
+        Map<Integer, List<Aluno>> mapAlunosEsperados = new HashMap<>();
+        mapAlunosEsperados.put(7, Arrays.asList(new Aluno("jonas", 7),
+                new Aluno("alberto", 7),new Aluno("will", 7)));
+        mapAlunosEsperados.put(10, Arrays.asList(new Aluno("guilherme", 10),
+                new Aluno("andre", 10)));
+        mapAlunosEsperados.put(8, Arrays.asList(new Aluno("richard", 8)));
+
+        Map<Integer, List<Aluno>> mapAlunos = alunoService.alunosPorNotaComLista(alunos);
+
+        assertEquals(mapAlunosEsperados, mapAlunos);
 
     }
 }
