@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="avaliacao/src/main/java"/>
+	<classpathentry kind="src" path="avaliacao/src/test/java"/>
+	<classpathentry kind="src" path="tdd/src/main/java"/>
+	<classpathentry kind="src" path="tdd/src/test/java"/>
+	<classpathentry kind="lib" path="avaliacao/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="tdd/target/tdd-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="avaliacao/target/classes"/>
+</classpath>
